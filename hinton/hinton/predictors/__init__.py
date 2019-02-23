@@ -1,0 +1,1 @@
+from hinton.predictors.suggestion_mining_predictor import SuggestionMiningPredictor
