@@ -9,6 +9,7 @@
 ## dan+glove
 
 ```bash
+cd dan_glove
 allennlp train --include-package=hinton dan_glove.jsonnet -s run_1
 allennlp train --include-package=hinton dan_glove.jsonnet -s run_2 --overrides="{"numpy_seed": 453, "pytorch_seed": 12, "random_seed": 193 }"
 allennlp train --include-package=hinton dan_glove.jsonnet -s run_3 --overrides="{"numpy_seed": 78, "pytorch_seed": 32, "random_seed":  54 }"
@@ -27,6 +28,7 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 ## dan+bert
 
 ```bash
+cd dan_bert
 allennlp train --include-package=hinton dan_bert.jsonnet -s run_1
 allennlp train --include-package=hinton dan_bert.jsonnet -s run_2 --overrides="{"numpy_seed": 88, "pytorch_seed": 938, "random_seed":  1111 }"
 allennlp train --include-package=hinton dan_bert.jsonnet -s run_3 --overrides="{"numpy_seed": 8238, "pytorch_seed": 43345, "random_seed":  834 }"
@@ -45,6 +47,7 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 
 
 ```bash
+cd dan_bert_no_upsampling
 allennlp train --include-package=hinton dan_bert_no_upsampling.jsonnet -s run_1
 allennlp train --include-package=hinton dan_bert_no_upsampling.jsonnet -s run_2 --overrides="{"numpy_seed": 88, "pytorch_seed": 938, "random_seed":  1111 }"
 allennlp train --include-package=hinton dan_bert_no_upsampling.jsonnet -s run_3 --overrides="{"numpy_seed": 8238, "pytorch_seed": 43345, "random_seed":  834 }"
@@ -61,6 +64,7 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 ## cnn+bert
 
 ```bash
+cd cnn_bert
 allennlp train --include-package=hinton cnn_bert.jsonnet -s run_1
 allennlp train --include-package=hinton cnn_bert.jsonnet -s run_2 --overrides="{"numpy_seed": 2124, "pytorch_seed": 1621, "random_seed": 882 }"
 allennlp train --include-package=hinton cnn_bert.jsonnet -s run_3 --overrides="{"numpy_seed": 1324, "pytorch_seed": 31, "random_seed": 9277 }"
@@ -80,6 +84,7 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 ## cnn+bert-upsampling
 
 ```bash
+cd cnn_bert_no_upsampling
 allennlp train --include-package=hinton cnn_bert_no_upsampling.jsonnet -s run_1
 allennlp train --include-package=hinton cnn_bert_no_upsampling.jsonnet -s run_2 --overrides="{"numpy_seed": 2124, "pytorch_seed": 1621, "random_seed": 882 }"
 allennlp train --include-package=hinton cnn_bert_no_upsampling.jsonnet -s run_3 --overrides="{"numpy_seed": 1324, "pytorch_seed": 31, "random_seed": 9277 }"
@@ -97,6 +102,7 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 ## cnn + bert + tritrain on unlabelled test set data 
 
 ```bash
+cd cnn_bert_tritrain
 python ../../tritrain.py cnn_bert_tri_train.jsonnet ./run_1 ../../data/SubtaskA_EvaluationData.csv 1337 2>&1 | tee run_1.log
 python ../../tritrain.py cnn_bert_tri_train.jsonnet ./run_2 ../../data/SubtaskA_EvaluationData.csv 1331 2>&1 | tee run_2.log
 python ../../tritrain.py cnn_bert_tri_train.jsonnet ./run_3 ../../data/SubtaskA_EvaluationData.csv 141 2>&1 | tee run_3.log
@@ -115,5 +121,5 @@ python ../../evaluate_runs.py . ../../data/SubtaskA_Trial_Test_Labeled.csv ../..
 ## Mcnemar 
 
 ```bash
-python mcnemar_test.py subtask_a
+python ../mcnemar_test.py .
 ```
