@@ -48,7 +48,7 @@ ijson==2.3
 imagesize==1.1.0
 isort==4.3.4
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.11.3
 jmespath==0.9.3
 jsondiff==1.1.1
 jsonnet==0.10.0
