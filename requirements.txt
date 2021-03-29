@@ -82,7 +82,7 @@ pyasn1==0.4.5
 pycparser==2.19
 pycryptodome==3.7.3
 pyemd==0.5.1
-Pygments==2.3.1
+Pygments==2.7.4
 pylint==2.2.2
 pyparsing==2.3.1
 Pyphen==0.9.5
